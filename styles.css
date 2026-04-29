@@ -9,14 +9,6 @@ body {
   color: #1a1a1a;
   background: #fafaf7;
 }
-@media (prefers-color-scheme: dark) {
-  body { color: #e5e5e5; background: #0f0f10; }
-  a { color: #e89972; }
-  .card { background: #1a1a1c; border-color: #2a2a2c; }
-  header { border-bottom-color: #2a2a2c; }
-  .section h2 { color: #f0f0f0; }
-  .meta { color: #888; }
-}
 .wrap {
   max-width: 720px;
   margin: 0 auto;
@@ -62,9 +54,6 @@ nav a:hover { opacity: 1; text-decoration: underline; }
   color: #2a2a2a;
   margin-bottom: 28px;
 }
-@media (prefers-color-scheme: dark) {
-  .lead { color: #ccc; }
-}
 .section { margin-bottom: 28px; }
 .section h2 {
   font-size: 16px;
@@ -84,5 +73,15 @@ nav a:hover { opacity: 1; text-decoration: underline; }
   margin-top: 24px;
 }
 .card strong { display: block; margin-bottom: 4px; font-size: 14px; }
-.card a { color: #C0714F; }
 a { color: #C0714F; }
+
+/* Dark mode overrides — placed last so they win the cascade */
+@media (prefers-color-scheme: dark) {
+  body { color: #e5e5e5; background: #0f0f10; }
+  a { color: #e89972; }
+  header { border-bottom-color: #2a2a2c; }
+  .meta { color: #888; }
+  .lead { color: #cccccc; }
+  .section h2 { color: #f0f0f0; }
+  .card { background: #1a1a1c; border-color: #2a2a2c; }
+}
